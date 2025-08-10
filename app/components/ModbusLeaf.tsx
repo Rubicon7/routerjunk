@@ -54,7 +54,7 @@ export default function ModbusLeaf({ data }: { data: leafNodeData }) {
         maintainAspectRatio: false,
         plugins: {
             legend: { display: false },
-            tooltip: { enabled: true },
+            tooltip: { enabled: false },
         },
         elements: {
             arc: { borderWidth: 2 },
@@ -71,7 +71,7 @@ export default function ModbusLeaf({ data }: { data: leafNodeData }) {
         data: data.graph,
         borderWidth: 2,
         tension: 0.25,
-        pointRadius: 5,
+        pointRadius: 0.5,
         pointHoverRadius: 7,
         showLine: true,
         fill: false,
@@ -94,7 +94,7 @@ export default function ModbusLeaf({ data }: { data: leafNodeData }) {
     },
     elements: {
       point: {
-        hitRadius: 0,
+        hitRadius: 1,
       },
     },
   };
@@ -112,7 +112,7 @@ export default function ModbusLeaf({ data }: { data: leafNodeData }) {
                 {data.flavortext}
             </p>
         </div>
-        <div className="flex-1/4 max-h-16 border-gray-400 border-2">
+        <div className="flex-1/4 max-h-16 border-gray-400">
             <div className="">
                 <div className="relative flex-shrink-0 max-w-10 max-h-10">
                     <Doughnut data={donutData} options={doughnutOptions} />
